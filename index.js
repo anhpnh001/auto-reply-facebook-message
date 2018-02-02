@@ -1,19 +1,19 @@
 'use strict';
 const login = require('facebook-chat-api');
 const request = require('request');
-
-let key = 'ad41316f-d521-44f3-8e52-2b1fdbfb1d5b';
-// User list does not receive messages
+// Enter your Simsimi API key
+let key = '';
+// Enter your username and password
+let account = {
+    email: '',
+    password: ''
+}
+// List of users is excluded
 let except = [
     '100012514756623'
 ];
-// Replace it with your email and password
-login({
-    email: '',
-    password: ''
-}, (err, api) => {
+login(account, (err, api) => {
     if (err) return console.error(err);
-    // Options
     api.setOptions({
         forceLogin: true
     });
@@ -25,7 +25,7 @@ login({
                 request(`http://sandbox.api.simsimi.com/request.p?key=${key}&lc=vn&ft=1.0&text=${encodeURI(message.body)}`,
                     (err, res, body) => {
                         body = JSON.parse(body);
-                        if (!body.response) return api.sendMessage('Tôi không hiểu!', message.threadID);
+                        if (!body.response) return api.sendMessage('I don\'t know!', message.threadID);
                         api.sendMessage(body.response, message.threadID);
                     }
                 );

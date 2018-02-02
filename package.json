@@ -1,14 +1,22 @@
 {
-  "name": "facebook-chat",
+  "name": "auto-reply-facebook-message",
   "version": "1.0.0",
-  "description": "",
+  "description": "Auto reply facebook message with Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teoanhss113/auto-reply-facebook-message.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anh Phan <teoanhss113@gmail.com> (https://github.com/teoanhss113)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teoanhss113/auto-reply-facebook-message/issues"
+  },
+  "homepage": "https://github.com/teoanhss113/auto-reply-facebook-message#readme",
   "dependencies": {
     "facebook-chat-api": "^1.4.0",
     "request": "^2.83.0"
